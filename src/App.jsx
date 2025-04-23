@@ -12,7 +12,7 @@ import HomePage from "./pages/Home Page/homePage";
 function App() {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="/SDP-Project">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
