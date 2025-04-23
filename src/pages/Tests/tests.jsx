@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ThemeContext } from "../../Context/themeContext";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
-import styles from "../tests/tests.module.css";
+import styles from "../Tests/tests.module.css";
 
 const Tests = () => {
   const { darkMode } = useContext(ThemeContext);
