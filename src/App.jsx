@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ThemeProvider from "./Context/themeContext"; // 👈
+import ThemeProvider from "./Context/themeContext";
 import UserProfile from "./pages/User Profile/userProfile";
 import VisitedHospitals from "./pages/Visited Hospitals/visitedHospitals";
 import Diseases from "./pages/Diseases/diseases";
