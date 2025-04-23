@@ -1,0 +1,170 @@
+.onlyUserPage {
+  padding-left: 100px;
+  padding-top: 121px;
+}
+
+.pageContent {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.leftContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.userInfo {
+  margin-bottom: 32px;
+}
+
+.userName {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 17px;
+}
+
+.userMeasures {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  display: flex;
+  flex-flow: row;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.userMeasures div p {
+  margin-bottom: 8px;
+}
+
+.comments {
+  margin-bottom: 42px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.commentSection {
+  height: 70px;
+  width: 100%;
+  max-width: 650px;
+  border: none;
+  outline: solid;
+  outline-color: #d9d9d9;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.doctorComments {
+  display: flex;
+  flex-flow: column;
+  gap: 5px;
+}
+
+.doctorComments > span {
+  font-size: 12px;
+}
+
+.upcomingVisits > p {
+  font-size: 23px;
+  font-weight: 500;
+  margin-bottom: 36px;
+}
+
+.hospitals {
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+}
+
+.singleHospital {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.hospitalName {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.hospitalDetail {
+  font-size: 12px;
+  color: #666666;
+  margin-top: 2px;
+}
+
+.calendar {
+  margin-top: 30px;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 8px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-right: 50px;
+}
+
+.calendar div {
+  background-color: #f4e7ff;
+}
+
+.dark {
+  background-color: #2c3e50;
+}
+
+.dark .singleHospital svg {
+  background-color: white;
+}
+
+.dark p,
+span {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .onlyUserPage {
+    padding: 80px 15px 20px 15px;
+  }
+
+  .pageContent {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  .userName {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .userMeasures {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .commentSection {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .calendar {
+    position: relative;
+    left: -15px;
+    top: auto;
+    max-width: 100%;
+    bottom: 50px;
+  }
+
+  .hospitals {
+    gap: 15px;
+  }
+
+  .singleHospital {
+    flex-direction: row;
+    gap: 10px;
+  }
+}

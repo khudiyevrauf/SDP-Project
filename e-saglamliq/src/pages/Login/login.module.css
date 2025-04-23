@@ -1,0 +1,283 @@
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: #f4f4f4;
+  font-family: "Roboto", sans-serif;
+}
+
+.loginSection {
+  width: 35%;
+  padding: 80px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.loginSection h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.loginSection label {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.loginSection input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 5px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin: 15px 0;
+}
+
+.options a {
+  color: #6a5acd;
+  text-decoration: none;
+}
+
+.signInBtn {
+  background-color: #6a5acd;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signInBtn p {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.digitalBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.digitalBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+.signup {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup a {
+  color: #6a5acd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.digitalSection {
+  width: 60%;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.digitalLogo {
+  width: 180px;
+  margin-bottom: 30px;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.digitalOption {
+  width: 300px;
+  height: 160px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.digitalOption:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.digitalOption img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+input {
+  outline: none;
+}
+
+.raqamsal {
+  background-color: #c04d2c;
+}
+
+.asan {
+  background-color: #a66dd4;
+}
+
+.token {
+  background-color: #7da8d1;
+}
+
+.bsxm {
+  background-color: #d19043;
+}
+
+.homeBtn {
+  display: flex;
+  width: fit-content;
+  align-items: end;
+  gap: 6px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #6a5acd;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
+.homeBtn:hover {
+  text-decoration: underline;
+}
+
+.homeIcon {
+  stroke-width: 2;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .loginSection {
+    width: 100%;
+    padding: 40px 0px;
+    align-items: center;
+  }
+
+  .loginSection h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .loginSection label,
+  .loginSection input,
+  .form {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .options label {
+    display: flex;
+    align-items: center;
+  }
+
+  .options label input {
+    width: 20px;
+  }
+
+  .digitalSection {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttonGrid {
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .digitalOption {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .homeBtn {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .digitalBtn {
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+    max-width: 360px;
+  }
+
+  .signup {
+    font-size: 13px;
+    max-width: 360px;
+  }
+}

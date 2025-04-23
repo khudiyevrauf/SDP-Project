@@ -1,0 +1,390 @@
+.mainContent {
+  padding-left: 100px;
+  padding-top: 121px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.filterBar {
+  display: flex;
+  margin-bottom: 30px;
+  padding-right: 152px;
+  align-items: center;
+}
+
+.filterBarDate {
+  background-color: #f5f7fa;
+  gap: 1px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.filterButton {
+  background-color: transparent;
+  border: none;
+  padding: 10px 16px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  background-color: #f0f2f5;
+  transition: background-color 0.2s ease;
+}
+
+.filterButton:first-child {
+  background-color: white;
+  border-right: 1px solid #ccc;
+}
+
+.filterButton:not(:first-child) {
+  border-right: 1px solid #ccc;
+}
+
+.dateInput {
+  border: none;
+  background-color: #f0f2f5;
+  padding: 10px;
+  font-size: 14px;
+  color: #222;
+  width: 110px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dateSeparator {
+  padding: 0 10px;
+  color: black;
+  font-size: 18px;
+  user-select: none;
+}
+
+.sortDropdown {
+  margin-left: auto;
+  border: none;
+  padding: 6px;
+  border-radius: 5px;
+  width: 200px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: -1px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cardContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background-color: #f1f5fc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 360px;
+  height: 480px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardHeader > div:first-of-type {
+  display: flex;
+  align-items: center;
+}
+
+.initial {
+  background-color: grey;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  padding: 8px;
+  min-width: 150px;
+}
+
+.dropdownMenu button {
+  background: none;
+  border: none;
+  font-size: 14px;
+  padding: 6px 10px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdownMenu button:hover {
+  background-color: #eee;
+}
+
+.hospitalName {
+  font-weight: bold;
+}
+
+.address {
+  font-size: 12px;
+  color: gray;
+}
+
+.options {
+  cursor: pointer;
+}
+
+.cardBody {
+  margin-top: 20px;
+}
+
+.datetime,
+.doctorName,
+.profession {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.doctorName {
+  font-weight: bold;
+}
+
+.profession {
+  color: gray;
+}
+
+.description {
+  font-size: 13px;
+  color: #333;
+  margin-top: 10px;
+}
+
+.prescriptionButton {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #23395d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.prescriptionButton:hover {
+  background-color: #305d87;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prescriptionTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.prescriptionTable th,
+.prescriptionTable td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+.prescriptionTable th {
+  background-color: #f0f0f0;
+}
+
+.darkVisitedHospitals .prescriptionButton {
+  background-color: white;
+  color: black;
+}
+
+.darkVisitedHospitals .prescriptionButton:hover {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.darkVisitedHospitals .card,
+.darkVisitedHospitals .sortDropdown {
+  background-color: #435d77;
+}
+
+.darkVisitedHospitals p,
+.darkVisitedHospitals span,
+.darkVisitedHospitals .card,
+.darkVisitedHospitals .title,
+.darkVisitedHospitals .sortDropdown,
+.darkVisitedHospitals .closeButton {
+  color: white;
+}
+
+.darkVisitedHospitals .dropdownMenu {
+  background-color: #2c3e50;
+  color: white;
+  border: 1px solid #445c77;
+}
+
+.darkVisitedHospitals .dropdownMenu button {
+  color: white;
+}
+
+.darkVisitedHospitals .dropdownMenu button:hover {
+  background-color: #3a4f66;
+}
+
+.darkVisitedHospitals .modalContent,
+.darkVisitedHospitals .modalContent th {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.darkVisitedHospitals .dateSeparator {
+  color: black;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 80px 12px 60px 12px;
+  }
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .filterBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-right: 0;
+  }
+
+  .filterBarDate {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 6px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .filterButton,
+  .dateInput {
+    padding: 8px 12px;
+    font-size: 12px;
+    flex: 1 1 auto;
+  }
+
+  .dateInput {
+    width: auto;
+    min-width: 120px;
+  }
+
+  .sortDropdown {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .cardContainer {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+    padding: 12px;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .initial {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .cardBody .datetime,
+  .cardBody .doctorName,
+  .cardBody .profession,
+  .description {
+    font-size: 12px;
+  }
+
+  .prescriptionButton {
+    padding: 8px;
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  .modalContent {
+    width: 95%;
+    padding: 16px;
+  }
+
+  .prescriptionTable th,
+  .prescriptionTable td {
+    padding: 8px;
+    font-size: 13px;
+  }
+}
+

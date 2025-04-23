@@ -1,0 +1,106 @@
+.sideBar {
+  background-color: #e5e5e5;
+  width: 55px;
+  height: 100vh;
+  padding-top: 107px;
+  position: fixed;
+  left: 0;
+  overflow-x: hidden;
+}
+
+.darkSidebar {
+  background-color: #516883;
+  color: white;
+}
+
+.darkSidebar .iconLink svg {
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.darkSidebar .iconLink:hover svg {
+  fill: #323232;
+}
+
+.darkSidebar .iconLink:hover {
+  background-color: white;
+}
+
+.darkSidebar .active > svg {
+  fill: black;
+}
+
+.darkSidebar .active {
+  background-color: white;
+}
+
+.menu {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.iconLink svg {
+  fill: #323232;
+  transition: fill 0.3s ease;
+}
+
+.iconLink:hover svg {
+  fill: white;
+}
+
+.iconLink:hover {
+  background-color: #214573;
+}
+
+.iconLink {
+  position: relative;
+  width: 100%;
+  padding: 11px 15px;
+  box-sizing: border-box;
+}
+
+.active {
+  background-color: #214573;
+}
+
+.active > svg {
+  fill: white;
+}
+
+@media (max-width: 768px) {
+  .sideBar {
+    height: 50px;
+    width: 100%;
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    z-index: 1;
+  }
+
+  .menu {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    padding: 0 4px;
+  }
+
+  .iconLink {
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+
+  .iconLink svg {
+    width: 20px;
+    height: 20px;
+  }
+
+}
