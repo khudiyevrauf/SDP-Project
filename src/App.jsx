@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import ThemeProvider from "./Context/themeContext";
 import UserProfile from "./pages/User Profile/userProfile";
 import VisitedHospitals from "./pages/Visited Hospitals/visitedHospitals";
@@ -12,7 +12,7 @@ import HomePage from "./pages/Home Page/homePage";
 function App() {
   return (
     <ThemeProvider>
-      <Router basename="/SDP-Project">
+      <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
@@ -23,7 +23,7 @@ function App() {
           <Route path="/receipts" element={<Receipts />} />
           <Route path="/sign-up" element={<Register />} />
         </Routes>
-      </Router>
+      </HashRouter>
     </ThemeProvider>
   );
 }
