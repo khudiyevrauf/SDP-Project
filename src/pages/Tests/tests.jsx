@@ -7,13 +7,43 @@ import styles from "../Tests/tests.module.css";
 const Tests = () => {
   const { darkMode } = useContext(ThemeContext);
 
-  const dummyData = Array(5).fill({
-    date: "DD/MM/YYYY",
-    testName: "TEST_NAME",
-    result: "Positive",
-    clinic: "CLINIC_NAME",
-    doctor: "DOCTOR_NAME",
-  });
+  const testData = [
+    {
+      date: "2025-04-23",
+      testName: "Blood Test",
+      result: "Positive",
+      clinic: "Baku Medical Plaza",
+      doctor: "Rasim Qulamov",
+    },
+    {
+      date: "2025-04-22",
+      testName: "X-ray",
+      result: "Negative",
+      clinic: "Referance Hospital",
+      doctor: "Türkan İsmayılova",
+    },
+    {
+      date: "2025-04-21",
+      testName: "CT Scan",
+      result: "Positive",
+      clinic: "Ege Hospital",
+      doctor: "Telman Yusifov",
+    },
+    {
+      date: "2025-04-20",
+      testName: "MRI",
+      result: "Negative",
+      clinic: "Baku Medical Plaza",
+      doctor: "Arif Orucov",
+    },
+    {
+      date: "2025-04-19",
+      testName: "Ultrasound",
+      result: "Positive",
+      clinic: "Baku Medical Plaza",
+      doctor: "Samin Qulamov",
+    },
+  ];
 
   const renderTable = (title) => (
     <>
@@ -31,7 +61,7 @@ const Tests = () => {
             </tr>
           </thead>
           <tbody>
-            {dummyData.map((item, index) => (
+            {testData.map((item, index) => (
               <tr key={index}>
                 <td data-label="Date">{item.date}</td>
                 <td data-label="Test Name">{item.testName}</td>
@@ -50,7 +80,9 @@ const Tests = () => {
   );
 
   return (
-    <div className={`${styles.testPage} ${darkMode ? styles.darkTestPage : ""}`}>
+    <div
+      className={`${styles.testPage} ${darkMode ? styles.darkTestPage : ""}`}
+    >
       <Sidebar />
       <Header />
       <div className={styles.container}>

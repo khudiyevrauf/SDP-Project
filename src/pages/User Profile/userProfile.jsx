@@ -12,7 +12,7 @@ const UserProfile = () => {
   const { darkMode } = useContext(ThemeContext);
   const rectFill = darkMode ? "#3a3a3a" : "#1D1B20";
 
-  const HospitalCard = () => (
+  const HospitalCard = ({ hospitalName, doctorName, dateTime }) => (
     <div className={styles.singleHospital}>
       <svg
         className={styles.hospitalLogo}
@@ -49,9 +49,9 @@ const UserProfile = () => {
         </defs>
       </svg>
       <div className={styles.hospitalNameInfo}>
-        <p className={styles.hospitalName}>Hospital name</p>
-        <p className={styles.hospitalDetail}>doctor name and section</p>
-        <p className={styles.hospitalDetail}>date and time</p>
+        <p className={styles.hospitalName}>{hospitalName}</p>
+        <p className={styles.hospitalDetail}>{doctorName}</p>
+        <p className={styles.hospitalDetail}>{dateTime}</p>
       </div>
     </div>
   );
@@ -96,9 +96,21 @@ const UserProfile = () => {
             <div className={styles.upcomingVisits}>
               <p>Upcoming visits</p>
               <div className={styles.hospitals}>
-                <HospitalCard />
-                <HospitalCard />
-                <HospitalCard />
+                <HospitalCard
+                  hospitalName="Ege Hospital"
+                  doctorName="Huseyn Aliyev, Dentistry"
+                  dateTime="19 january, 08:00"
+                />
+                <HospitalCard
+                  hospitalName="Referance Hospital"
+                  doctorName="Arif Orucov , Ophthalmology "
+                  dateTime="3 february, 13:00"
+                />
+                <HospitalCard
+                  hospitalName="Baku Medical Plaza"
+                  doctorName="Telman Yusifov , Dermatology"
+                  dateTime="15 february, 14:00"
+                />
               </div>
             </div>
           </div>

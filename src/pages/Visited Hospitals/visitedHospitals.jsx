@@ -8,9 +8,48 @@ import styles from "../Visited Hospitals/visitedHospitals.module.css";
 const visitedHospitals = () => {
   const { darkMode } = useContext(ThemeContext);
   const [cards, setCards] = useState([
-    { id: 1, name: "Hospital 1", visible: true },
-    { id: 2, name: "Hospital 2", visible: true },
-    { id: 3, name: "Hospital 3", visible: true },
+    {
+      id: 1,
+      name: "Ege Hospital",
+      adress: "38 Academician Hasan Aliyev St",
+      dateTime: "19 january, 08:00",
+      doctorName: "Huseyn Aliyev",
+      profession: "Dentist",
+      about: "Ege Hospital, Sağlamlığınız Sağlamlığımızdır!",
+      prescription: [
+        { medicine: "Paracetamol", usage: "Twice a day after meals" },
+        { medicine: "Ibuprofen", usage: "Once a day" },
+      ],
+      visible: true,
+    },
+    {
+      id: 2,
+      name: "Referance Hospital ",
+      adress: "Matbuat Street 35A",
+      dateTime: "3 february, 13:00",
+      doctorName: "Arif Orucov ",
+      profession: "Ophthalmologist",
+      about: "Referans Hospital - Yeni Dövr, Yeni Yanaşma",
+      prescription: [
+        { medicine: "Xanax", usage: "Once a day at bedtime" },
+        { medicine: "Amoxicillin", usage: "Twice a day" },
+      ],
+      visible: true,
+    },
+    {
+      id: 3,
+      name: "Baku Medical Plaza",
+      adress: "Babak avenue 42N ",
+      dateTime: "15 february, 14:00",
+      doctorName: "Telman Yusifov",
+      profession: "Dermatologist",
+      about: "Baku Medical Plaza - Sağlamlığa doğan günəş!",
+      prescription: [
+        { medicine: "Ciprofloxacin", usage: "Every 12 hours" },
+        { medicine: "Aspirin", usage: "Once a day" },
+      ],
+      visible: true,
+    },
   ]);
 
   const [activeMenu, setActiveMenu] = useState(null);
@@ -70,13 +109,13 @@ const visitedHospitals = () => {
             <input
               type="date"
               className={styles.dateInput}
-              defaultValue={dayjs().subtract(1, 'month').format('YYYY-MM-DD')}
+              defaultValue={dayjs().subtract(1, "month").format("YYYY-MM-DD")}
             />
             <span className={styles.dateSeparator}>→</span>
             <input
               type="date"
               className={styles.dateInput}
-              defaultValue={dayjs().format('YYYY-MM-DD')}
+              defaultValue={dayjs().format("YYYY-MM-DD")}
             />
           </div>
 
@@ -104,7 +143,7 @@ const visitedHospitals = () => {
                       <span className={styles.initial}>A</span>
                       <div>
                         <div className={styles.hospitalName}>{card.name}</div>
-                        <div className={styles.address}>Address</div>
+                        <div className={styles.address}>{card.adress}</div>
                       </div>
                     </div>
                     <div
@@ -123,13 +162,10 @@ const visitedHospitals = () => {
                   </div>
 
                   <div className={styles.cardBody}>
-                    <div className={styles.datetime}>DATE/TIME</div>
-                    <div className={styles.doctorName}>NAME OF THE DOCTOR</div>
-                    <div className={styles.profession}>PROFESSION</div>
-                    <p className={styles.description}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor
-                    </p>
+                    <div className={styles.datetime}>{card.dateTime}</div>
+                    <div className={styles.doctorName}>{card.doctorName}</div>
+                    <div className={styles.profession}>{card.profession}</div>
+                    <p className={styles.description}>{card.about}</p>
                   </div>
                   <button
                     className={styles.prescriptionButton}
@@ -157,18 +193,12 @@ const visitedHospitals = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Paracetamol</td>
-                    <td>Twice a day after meals</td>
-                  </tr>
-                  <tr>
-                    <td>Paracetamol</td>
-                    <td>Twice a day after meals</td>
-                  </tr>
-                  <tr>
-                    <td>Paracetamol</td>
-                    <td>Twice a day after meals</td>
-                  </tr>
+                  {selectedCard.prescription.map((med, index) => (
+                    <tr key={index}>
+                      <td>{med.medicine}</td>
+                      <td>{med.usage}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

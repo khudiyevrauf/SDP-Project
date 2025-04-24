@@ -14,9 +14,9 @@ const Header = () => {
   return (
     <header className={`${styles.header} ${darkMode ? styles.darkHeader : ""}`}>
       <div className={styles.logo}>
-        <a href="">
+        <NavLink to="/">
           <img className={styles.logoLink} src={Logo} alt="Logo" />
-        </a>
+        </NavLink>
         <span className={styles.logoWriting}>E-Saglamliq</span>
       </div>
       <nav>

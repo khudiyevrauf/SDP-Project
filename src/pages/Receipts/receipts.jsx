@@ -7,15 +7,65 @@ import styles from "../Receipts/receipts.module.css";
 const Receipts = () => {
   const { darkMode } = useContext(ThemeContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedReceipt, setSelectedReceipt] = useState(null);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  const openModal = (receipt) => {
+    setSelectedReceipt(receipt);
+    setIsModalOpen(true);
+  };
 
-  const dummyData = Array(5).fill({
-    date: "DD/MM/YYYY",
-    clinic: "CLINIC_NAME",
-    doctor: "DOCTOR_NAME",
-  });
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedReceipt(null);
+  };
+
+  const receiptsData = [
+    {
+      date: "2025-04-23",
+      clinic: "Ege Hospital ",
+      doctor: "Huseyn Aliyev",
+      prescription: [
+        { medicine: "Paracetamol", usage: "Twice a day after meals" },
+        { medicine: "Ibuprofen", usage: "Once a day" },
+      ],
+    },
+    {
+      date: "2025-04-22",
+      clinic: "Referance Hospital",
+      doctor: "Arif Orucov",
+      prescription: [
+        { medicine: "Xanax", usage: "Once a day at bedtime" },
+        { medicine: "Amoxicillin", usage: "Twice a day" },
+      ],
+    },
+    {
+      date: "2025-04-21",
+      clinic: "Baku Medical Plaza",
+      doctor: "Telman Yusifov",
+      prescription: [
+        { medicine: "Ciprofloxacin", usage: "Every 12 hours" },
+        { medicine: "Aspirin", usage: "Once a day" },
+      ],
+    },
+    {
+      date: "2025-04-20",
+      clinic: "West Hospital",
+      doctor: "Kazim Qasimov",
+      prescription: [
+        { medicine: "Omeprazole", usage: "Before meals" },
+        { medicine: "Folic acid", usage: "Once a day" },
+      ],
+    },
+    {
+      date: "2025-04-19",
+      clinic: "MedEra Hospital",
+      doctor: "Aysel Aliyeva",
+      prescription: [
+        { medicine: "Paracetamol", usage: "Twice a day after meals" },
+        { medicine: "Amoxicillin", usage: "Every 8 hours" },
+      ],
+    },
+  ];
 
   return (
     <div
@@ -39,7 +89,7 @@ const Receipts = () => {
               </tr>
             </thead>
             <tbody>
-              {dummyData.map((item, index) => (
+              {receiptsData.map((item, index) => (
                 <tr key={index}>
                   <td data-label="Date">{item.date}</td>
                   <td data-label="Clinic">{item.clinic}</td>
@@ -47,7 +97,7 @@ const Receipts = () => {
                   <td data-label="Action">
                     <button
                       className={styles.detailsButton}
-                      onClick={openModal}
+                      onClick={() => openModal(item)} // Pass the item to the modal
                     >
                       Details
                     </button>
@@ -58,7 +108,7 @@ const Receipts = () => {
           </table>
         </div>
 
-        {isModalOpen && (
+        {isModalOpen && selectedReceipt && (
           <div className={styles.modalOverlay}>
             <div className={styles.modalContent}>
               <button className={styles.closeButton} onClick={closeModal}>
@@ -73,18 +123,12 @@ const Receipts = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>Paracetamol</td>
-                    <td>Twice a day after meals</td>
-                  </tr>
-                  <tr>
-                    <td>Paracetamol</td>
-                    <td>Twice a day after meals</td>
-                  </tr>
-                  <tr>
-                    <td>Paracetamol</td>
-                    <td>Twice a day after meals</td>
-                  </tr>
+                  {selectedReceipt.prescription.map((med, index) => (
+                    <tr key={index}>
+                      <td>{med.medicine}</td>
+                      <td>{med.usage}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
