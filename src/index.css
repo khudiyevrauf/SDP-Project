@@ -135,3 +135,9 @@ body.dark {
 html {
   font-family: "Roboto", serif;
 }
+
+@media (prefers-color-scheme: dark) {
+  html {
+    -webkit-filter: invert(0) brightness(100%);
+  }
+}
