@@ -1,33 +1,31 @@
+// src/pages/Home Page/homePage.jsx
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../../components/header/header";
 import styles from "../Home Page/homePage.module.css";
 import { ThemeContext } from "../../Context/themeContext";
+import { useLanguage } from "../../Context/languageContext"; 
 
 const HomePage = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { language, translations } = useLanguage(); // Getting language context
 
   return (
-    <div
-      className={`${styles.homePage} ${darkMode ? styles.darkHomePage : ""}`}
-    >
+    <div className={`${styles.homePage} ${darkMode ? styles.darkHomePage : ""}`}>
       <Header />
       <div className={styles.content}>
-        <h1 className={styles.title}>Welcome to E-Saglamliq</h1>
+        <h1 className={styles.title}>{translations[language].welcome}</h1>
         <p className={styles.description}>
-          E-Saglamliq is your centralized e-health portal providing seamless
-          access to your medical records, hospital visits, prescriptions, tests,
-          and doctor communications—all in one place. Our mission is to simplify
-          and secure your healthcare experience.
+          {translations[language].description}
         </p>
         <NavLink to="/login" className={styles.loginButton}>
-          Continue Log In
+          {translations[language].continueLogin}
         </NavLink>
       </div>
 
       <div className={styles.teamContainer}>
         <div className={styles.section}>
-          <h2>Frontend Team</h2>
+          <h2>{translations[language].frontendTeam}</h2>
           <div className={styles.members}>
             <div className={styles.card}>
               <img
@@ -35,8 +33,8 @@ const HomePage = () => {
                 alt="Frontend Dev"
               />
               <h3>Murad Jafarov</h3>
-              <p>Frontend Developer</p>
-              <p>Design</p>
+              <p>{translations[language].frontendDeveloper}</p>
+              <p>{translations[language].design}</p>
             </div>
             <div className={styles.card}>
               <img
@@ -44,14 +42,14 @@ const HomePage = () => {
                 alt="Frontend Dev"
               />
               <h3>Rauf Khudiyev</h3>
-              <p>Frontend Developer</p>
-              <p>Design</p>
+              <p>{translations[language].frontendDeveloper}</p>
+              <p>{translations[language].design}</p>
             </div>
           </div>
         </div>
 
         <div className={styles.section}>
-          <h2>Backend Team</h2>
+          <h2>{translations[language].backendTeam}</h2>
           <div className={styles.members}>
             <div className={styles.card}>
               <img
@@ -59,8 +57,8 @@ const HomePage = () => {
                 alt="Backend Dev"
               />
               <h3>Rahimakhanim Ismayilzada</h3>
-              <p>Backend Developer</p>
-              <p>API</p>
+              <p>{translations[language].backendDeveloper}</p>
+              <p>{translations[language].api}</p>
             </div>
             <div className={styles.card}>
               <img
@@ -68,14 +66,14 @@ const HomePage = () => {
                 alt="Backend Dev"
               />
               <h3>Kanan Abdullayev</h3>
-              <p>Backend Developer</p>
-              <p>API</p>
+              <p>{translations[language].backendDeveloper}</p>
+              <p>{translations[language].api}</p>
             </div>
           </div>
         </div>
 
         <div className={styles.section}>
-          <h2>External Instructor</h2>
+          <h2>{translations[language].externalInstructor}</h2>
           <div className={styles.members}>
             <div className={styles.card}>
               <img
@@ -83,8 +81,8 @@ const HomePage = () => {
                 alt="Instructor"
               />
               <h3>Lala Guluzada</h3>
-              <p>External Instructor</p>
-              <p>Guides</p>
+              <p>{translations[language].externalInstructor}</p>
+              <p>{translations[language].guides}</p>
             </div>
           </div>
         </div>

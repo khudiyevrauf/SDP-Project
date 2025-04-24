@@ -8,7 +8,7 @@ const ThemeProvider = ({ children }) => {
       const saved = localStorage.getItem('darkMode');
       return saved ? JSON.parse(saved) : false;
     } catch (e) {
-      return false; // fallback if bad JSON
+      return false; 
     }
   });
 

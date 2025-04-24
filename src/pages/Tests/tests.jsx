@@ -3,9 +3,78 @@ import { ThemeContext } from "../../Context/themeContext";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
 import styles from "../Tests/tests.module.css";
+import { useLanguage } from "../../Context/languageContext"; // Import the language context
 
 const Tests = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { language } = useLanguage(); // Get the current language
+
+  // Define translations directly inside the file
+  const translations = {
+    en: {
+      details: "Details",
+      pageTitle: "Tests",
+      date: "Date",
+      testName: "Test Name",
+      result: "Result",
+      clinic: "Clinic",
+      doctor: "Doctor",
+      "Blood Test": "Blood Test",
+      "X-ray": "X-ray",
+      "CT Scan": "CT Scan",
+      "MRI": "MRI",
+      "Ultrasound": "Ultrasound",
+      "Positive": "Positive",
+      "Negative": "Negative",
+      "Rasim Qulamov": "Rasim Qulamov",
+      "Türkan İsmayılova": "Türkan İsmayılova",
+      "Telman Yusifov": "Telman Yusifov",
+      "Arif Orucov": "Arif Orucov",
+      "Samin Qulamov": "Samin Qulamov",
+    },
+    az: {
+      details: "Ətraflı",
+      pageTitle: "Testlər",
+      date: "Tarix",
+      testName: "Test Adı",
+      result: "Nəticə",
+      clinic: "Klinika",
+      doctor: "Həkim",
+      "Blood Test": "Qan testi",
+      "X-ray": "Rentgen",
+      "CT Scan": "CT Skani",
+      "MRI": "MRT",
+      "Ultrasound": "Ultrasəs",
+      "Positive": "Müsbət",
+      "Negative": "Mənfi",
+      "Rasim Qulamov": "Rasim Qulamov",
+      "Türkan İsmayılova": "Türkan İsmayılova",
+      "Telman Yusifov": "Telman Yusifov",
+      "Arif Orucov": "Arif Orucov",
+      "Samin Qulamov": "Samin Qulamov",
+    },
+    rus: {
+      details: "Детали",
+      pageTitle: "Тесты",
+      date: "Дата",
+      testName: "Название теста",
+      result: "Результат",
+      clinic: "Клиника",
+      doctor: "Доктор",
+      "Blood Test": "Анализ крови",
+      "X-ray": "Рентген",
+      "CT Scan": "КТ сканирование",
+      "MRI": "МРТ",
+      "Ultrasound": "УЗИ",
+      "Positive": "Положительный",
+      "Negative": "Отрицательный",
+      "Rasim Qulamov": "Расим Гуланов",
+      "Türkan İsmayılova": "Тюркан Исмайлова",
+      "Telman Yusifov": "Телман Юсифов",
+      "Arif Orucov": "Ариф Орджов",
+      "Samin Qulamov": "Самин Гуланов",
+    },
+  };
 
   const testData = [
     {
@@ -45,31 +114,36 @@ const Tests = () => {
     },
   ];
 
-  const renderTable = (title) => (
+  const { pageTitle, date, testName, result, clinic, doctor, details } =
+    translations[language]; // Get translations based on the selected language
+
+  const renderTable = (data) => (
     <>
-      <h2 className={styles.sectionTitle}>{title}</h2>
+      <h2 className={styles.sectionTitle}>{pageTitle}</h2>
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead>
             <tr>
-              <th>Date</th>
-              <th>Test Name</th>
-              <th>Result</th>
-              <th>Clinic</th>
-              <th>Doctor</th>
-              <th>Action</th>
+              <th>{date}</th>
+              <th>{testName}</th>
+              <th>{result}</th>
+              <th>{clinic}</th>
+              <th>{doctor}</th>
+              <th>{details}</th>
             </tr>
           </thead>
           <tbody>
-            {testData.map((item, index) => (
+            {data.map((item, index) => (
               <tr key={index}>
-                <td data-label="Date">{item.date}</td>
-                <td data-label="Test Name">{item.testName}</td>
-                <td data-label="Result">{item.result}</td>
-                <td data-label="Clinic">{item.clinic}</td>
-                <td data-label="Doctor">{item.doctor}</td>
-                <td data-label="Action">
-                  <button className={styles.detailsButton}>Details</button>
+                <td data-label={date}>{item.date}</td>
+                <td data-label={testName}>{translations[language][item.testName]}</td> {/* Translate test name */}
+                <td data-label={result}>{translations[language][item.result]}</td> {/* Translate result */}
+                <td data-label={clinic}>{item.clinic}</td>
+                <td data-label={doctor}>{translations[language][item.doctor]}</td> {/* Translate doctor */}
+                <td data-label={details}>
+                  <button className={styles.detailsButton}>
+                    {details} {/* Use translated text */}
+                  </button>
                 </td>
               </tr>
             ))}
@@ -87,7 +161,7 @@ const Tests = () => {
       <Header />
       <div className={styles.container}>
         <div className={styles.main}>
-          <div className={styles.content}>{renderTable("Tests")}</div>
+          <div className={styles.content}>{renderTable(testData)}</div>
         </div>
       </div>
     </div>
