@@ -1,59 +1,118 @@
 import React from "react";
 import styles from "../Register/register.module.css";
 import { NavLink } from "react-router-dom";
+import { useLanguage } from "../../Context/languageContext";
+import LanguageButton from "../../components/language button/languageButton";
 
 const Register = () => {
+  const { language } = useLanguage();
+  const languageText = {
+    en: {
+      title: "Sign Up",
+      fullName: "Full Name",
+      dob: "Date of Birth",
+      gender: "Gender",
+      genderSelect: "Select Gender",
+      female: "Female",
+      male: "Male",
+      other: "Prefer Not to Say",
+      id: "National ID / Passport Number",
+      phone: "Phone Number",
+      email: "Email",
+      address: "Residential Address",
+      register: "Register",
+      alreadyAccount: "Already have an account? ",
+      signIn: "Sign in",
+    },
+    az: {
+      title: "Qeydiyyatdan Keç",
+      fullName: "Ad Soyad",
+      dob: "Doğum Tarixi",
+      gender: "Cinsiyyət",
+      genderSelect: "Cinsiyyəti Seçin",
+      female: "Qadın",
+      male: "Kişi",
+      other: "Demək İstəmədim",
+      id: "Şəxsiyyət vəsiqəsi / Pasport Nömrəsi",
+      phone: "Telefon Nömrəsi",
+      email: "E-poçt",
+      address: "Yaşayış Ünvanı",
+      register: "Qeydiyyat",
+      alreadyAccount: "Hesabınız var? ",
+      signIn: "Daxil ol",
+    },
+    rus: {
+      title: "Регистрация",
+      fullName: "Полное имя",
+      dob: "Дата Рождения",
+      gender: "Пол",
+      genderSelect: "Выберите Пол",
+      female: "Женский",
+      male: "Мужской",
+      other: "Предпочитаю не говорить",
+      id: "Национальный ID / Номер Паспорта",
+      phone: "Номер Телефона",
+      email: "Электронная почта",
+      address: "Домашний Адрес",
+      register: "Регистрация",
+      alreadyAccount: "Уже есть аккаунт? ",
+      signIn: "Войти",
+    },
+  };
+
   return (
     <div className={styles.registerPage}>
-      <h2 className={styles.title}>Sign Up</h2>
+      <LanguageButton /> {/* Add the language button at the top */}
+      <h2 className={styles.title}>{languageText[language].title}</h2>
 
       <form className={styles.form}>
         <div className={styles.formGroup}>
-          <label>Full Name</label>
-          <input type="text" placeholder="Full Name" />
+          <label>{languageText[language].fullName}</label>
+          <input type="text" placeholder={languageText[language].fullName} />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Date of Birth</label>
+          <label>{languageText[language].dob}</label>
           <input type="date" />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Gender</label>
+          <label>{languageText[language].gender}</label>
           <select>
-            <option value="">Select Gender</option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
-            <option value="other">Prefer Not to Say</option>
+            <option value="">{languageText[language].genderSelect}</option>
+            <option value="female">{languageText[language].female}</option>
+            <option value="male">{languageText[language].male}</option>
+            <option value="other">{languageText[language].other}</option>
           </select>
         </div>
 
         <div className={styles.formGroup}>
-          <label>National ID / Passport Number</label>
-          <input type="text" placeholder="ID or Passport Number" />
+          <label>{languageText[language].id}</label>
+          <input type="text" placeholder={languageText[language].id} />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Phone Number</label>
-          <input type="tel" placeholder="Phone Number" />
+          <label>{languageText[language].phone}</label>
+          <input type="tel" placeholder={languageText[language].phone} />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Email</label>
-          <input type="email" placeholder="Email Address" />
+          <label>{languageText[language].email}</label>
+          <input type="email" placeholder={languageText[language].email} />
         </div>
 
         <div className={styles.formGroup}>
-          <label>Residential Address</label>
-          <textarea placeholder="Enter your address..." rows="3"></textarea>
+          <label>{languageText[language].address}</label>
+          <textarea placeholder={languageText[language].address} rows="3"></textarea>
         </div>
 
         <button type="submit" className={styles.submitButton}>
-          Register
+          {languageText[language].register}
         </button>
 
         <p className={styles.footerText}>
-          Already have an account? <NavLink to="/login">Sign in</NavLink>
+          {languageText[language].alreadyAccount}
+          <NavLink to="/login">{languageText[language].signIn}</NavLink>
         </p>
       </form>
     </div>

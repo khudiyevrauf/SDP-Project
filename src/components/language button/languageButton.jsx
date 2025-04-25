@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
-import { useLanguage } from "../../Context/languageContext"; // Import the hook
-import styles from "./languageButton.module.css"; // Import the CSS module
-import { ThemeContext } from "../../Context/themeContext"; // Import ThemeContext
+import { useLanguage } from "../../Context/languageContext";
+import styles from "./languageButton.module.css"; 
+import { ThemeContext } from "../../Context/themeContext"; 
 
 const LanguageButton = () => {
-  const { language, changeLanguage } = useLanguage(); // Destructure language and changeLanguage
-  const { darkMode } = useContext(ThemeContext); // Get the darkMode state from ThemeContext
+  const { language, changeLanguage } = useLanguage(); 
+  const { darkMode } = useContext(ThemeContext);
   
   const handleLanguageChange = (e) => {
-    changeLanguage(e.target.value); // Update the language when the option is selected
+    changeLanguage(e.target.value); 
   };
 
   return (

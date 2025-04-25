@@ -174,7 +174,6 @@ input {
   font-size: 20px;
   font-weight: 500;
   color: #6a5acd;
-  margin-bottom: 25px;
   text-decoration: none;
 }
 
@@ -185,6 +184,14 @@ input {
 .homeIcon {
   stroke-width: 2;
 }
+
+.homeAndLang{
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  gap: 20px;
+}
+
 
 .form {
   display: flex;

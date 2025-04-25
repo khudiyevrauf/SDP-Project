@@ -1,4 +1,3 @@
-// src/pages/Home Page/homePage.jsx
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../../components/header/header";
@@ -8,7 +7,7 @@ import { useLanguage } from "../../Context/languageContext";
 
 const HomePage = () => {
   const { darkMode } = useContext(ThemeContext);
-  const { language, translations } = useLanguage(); // Getting language context
+  const { language, translations } = useLanguage(); 
 
   return (
     <div className={`${styles.homePage} ${darkMode ? styles.darkHomePage : ""}`}>

@@ -1,16 +1,21 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../../Context/themeContext";
-import styles from "../User Profile/userProfile.module.css";
+import { useLanguage } from "../../Context/languageContext";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
+import styles from "../User Profile/userProfile.module.css";
 import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+import { userProfileData } from "../../data"; 
 
 const UserProfile = () => {
   const { darkMode } = useContext(ThemeContext);
+  const { language } = useLanguage();
   const rectFill = darkMode ? "#3a3a3a" : "#1D1B20";
+
+  const user = userProfileData[language]; 
 
   const HospitalCard = ({ hospitalName, doctorName, dateTime }) => (
     <div className={styles.singleHospital}>
@@ -64,15 +69,15 @@ const UserProfile = () => {
         <div className={styles.pageContent}>
           <div className={styles.leftContent}>
             <div className={styles.userInfo}>
-              <p className={styles.userName}>Welcome Rauf Khudiyev</p>
+              <p className={styles.userName}>{user.name}</p>
               <div className={styles.userMeasures}>
                 <div>
-                  <p>Age: 22</p>
-                  <p>Gender: Male</p>
+                  <p>{`${user.ageLabel} ${user.age}`}</p>
+                  <p>{`${user.sexLabel} ${user.gender}`}</p>
                 </div>
                 <div>
-                  <p>Weight: 76kg</p>
-                  <p>Height: 182cm</p>
+                  <p>{`${user.weightLabel} ${user.weight}`}</p>
+                  <p>{`${user.heightLabel} ${user.height}`}</p>
                 </div>
               </div>
             </div>
@@ -94,23 +99,22 @@ const UserProfile = () => {
             </div>
 
             <div className={styles.upcomingVisits}>
-              <p>Upcoming visits</p>
+              <p>
+                {language === "en"
+                  ? "Upcoming visits"
+                  : language === "az"
+                  ? "Yaxın Ziyarətlər"
+                  : "Предстоящие визиты"}
+              </p>
               <div className={styles.hospitals}>
-                <HospitalCard
-                  hospitalName="Ege Hospital"
-                  doctorName="Huseyn Aliyev, Dentistry"
-                  dateTime="19 january, 08:00"
-                />
-                <HospitalCard
-                  hospitalName="Referance Hospital"
-                  doctorName="Arif Orucov , Ophthalmology "
-                  dateTime="3 february, 13:00"
-                />
-                <HospitalCard
-                  hospitalName="Baku Medical Plaza"
-                  doctorName="Telman Yusifov , Dermatology"
-                  dateTime="15 february, 14:00"
-                />
+                {user.upcomingVisits.map((visit, index) => (
+                  <HospitalCard
+                    key={index}
+                    hospitalName={visit.hospital}
+                    doctorName={visit.doctor}
+                    dateTime={visit.dateTime}
+                  />
+                ))}
               </div>
             </div>
           </div>
