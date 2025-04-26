@@ -3,18 +3,20 @@ import { NavLink } from "react-router-dom";
 import Header from "../../components/header/header";
 import styles from "../Home Page/homePage.module.css";
 import { ThemeContext } from "../../Context/themeContext";
-import { useLanguage } from "../../Context/languageContext"; 
+import { useLanguage } from "../../Context/languageContext";
 
 const HomePage = () => {
   const { darkMode } = useContext(ThemeContext);
-  const { language, translations } = useLanguage(); 
+  const { language, translations } = useLanguage();
 
   useEffect(() => {
-    document.title ="E-Saglamliq";
+    document.title = "E-Saglamliq";
   }, [HomePage]);
 
   return (
-    <div className={`${styles.homePage} ${darkMode ? styles.darkHomePage : ""}`}>
+    <div
+      className={`${styles.homePage} ${darkMode ? styles.darkHomePage : ""}`}
+    >
       <Header />
       <div className={styles.content}>
         <h1 className={styles.title}>{translations[language].welcome}</h1>
@@ -84,6 +86,15 @@ const HomePage = () => {
                 alt="Instructor"
               />
               <h3>Lala Guluzada</h3>
+              <p>{translations[language].externalInstructor}</p>
+              <p>{translations[language].guides}</p>
+            </div>
+            <div className={styles.card}>
+              <img
+                src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-55958-614810.jpg&fm=jpg"
+                alt="Instructor"
+              />
+              <h3>Orkhan Karimzada</h3>
               <p>{translations[language].externalInstructor}</p>
               <p>{translations[language].guides}</p>
             </div>

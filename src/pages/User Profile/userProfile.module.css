@@ -134,21 +134,35 @@ span {
     flex-wrap: nowrap;
   }
 
+  .userInfo{
+    margin-bottom: 22px;
+  }
+
   .userName {
     font-size: 20px;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 16px;
   }
 
   .userMeasures {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 18px;
     font-size: 15px;
-    text-align: center;
+    text-align: left;
+  }
+
+  .comments{
+    margin-bottom: 22px;
+    gap: 6px;
   }
 
   .commentSection {
     width: 100%;
     max-width: 100%;
+  }
+
+  .upcomingVisits > p{
+    margin-bottom: 16px;
   }
 
   .calendar {

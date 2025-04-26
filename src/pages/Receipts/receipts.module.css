@@ -122,12 +122,12 @@
   color: white;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .title {
     font-size: 24px;
-    margin: 80px 12px 15px 12px;
+    margin: 80px 12px 15px 14px;
     padding: 0;
-    text-align: center;
+    text-align: left;
   }
 
   .table {
@@ -152,6 +152,7 @@
   .table tr {
     display: flex;
     flex-direction: column;
+    gap: 6px;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -163,6 +164,9 @@
     padding: 4px 0;
     padding-left: 0 !important;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
   .table td::before {
@@ -171,6 +175,10 @@
     display: block;
     font-size: 13px;
     color: #555;
+  }
+
+  .table td:last-of-type::before {
+    display: none;
   }
 
   .detailsButton {

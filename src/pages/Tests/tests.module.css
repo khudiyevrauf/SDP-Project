@@ -50,7 +50,7 @@
   padding-left: 45px;
 }
 
-td{
+td {
   margin-bottom: 10px;
 }
 
@@ -95,8 +95,8 @@ td{
 @media (max-width: 768px) {
   .sectionTitle {
     font-size: 24px;
-    margin: 80px 12px 15px 12px;
-    text-align: center;
+    margin: 80px 12px 15px 14px;
+    text-align: left;
   }
 
   .container {
@@ -127,6 +127,7 @@ td{
   .table tr {
     display: flex;
     flex-direction: column;
+    gap: 6px;
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -136,8 +137,11 @@ td{
 
   .table td {
     padding: 4px 0;
-    padding-left: 0 !important;
+    padding-left: 0 ;
     font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
 
   .table td::before {
@@ -148,8 +152,11 @@ td{
     color: #555;
   }
 
+  .table td:last-of-type::before{
+    display: none;
+  }
+
   .detailsButton {
-    margin-top: 8px;
     font-size: 13px;
     padding: 8px;
   }
