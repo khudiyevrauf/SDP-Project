@@ -148,7 +148,7 @@ const VisitedHospitals = () => {
                 <div key={card.id} className={styles.card}>
                   <div className={styles.cardHeader}>
                     <div>
-                      <span className={styles.initial}>A</span>
+                      <span className={styles.initial}>{card.clinicLogo}</span>
                       <div>
                         <div className={styles.hospitalName}>{card.name}</div>
                         <div className={styles.address}>{card.adress}</div>
@@ -174,14 +174,21 @@ const VisitedHospitals = () => {
                   </div>
 
                   <div className={styles.cardBody}>
+                    <img
+                      src={card.picture}
+                      alt="pic"
+                      className={styles.cardImg}
+                    />
                     <div className={styles.datetime}>{card.dateTime}</div>
-                    <div className={styles.doctorName}>
-                      {card.doctorName[language]}
+                    <div className={styles.PrNm}>
+                      <div className={styles.profession}>
+                        {card.profession[language]}
+                      </div>
+                      , &nbsp;
+                      <div className={styles.doctorName}>
+                        {card.doctorName[language]}
+                      </div>
                     </div>
-                    <div className={styles.profession}>
-                      {card.profession[language]}
-                    </div>
-                    <p className={styles.description}>{card.about[language]}</p>
                   </div>
                   <button
                     className={styles.prescriptionButton}

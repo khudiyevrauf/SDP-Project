@@ -132,3 +132,10 @@
 .darkHomePage .card p {
   color: #ddd;
 }
+
+@media (max-width: 600px) {
+  .description{
+    text-align: left;
+    width: 100%;
+  }
+}

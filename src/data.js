@@ -484,6 +484,7 @@ export const testData = [
 export const hospitalData = [
   {
     id: 1,
+    clinicLogo:"E",
     name: "Ege Hospital",
     adress: "38 Academician Hasan Aliyev St",
     dateTime: "19 january, 08:00",
@@ -497,11 +498,7 @@ export const hospitalData = [
       az: "Diş Həkimi",
       rus: "Стоматолог",
     },
-    about: {
-      en: "Ege Hospital, Sağlamlığınız Sağlamlığımızdır!",
-      az: "Ege Xəstəxanası, Sağlamlığınız Sağlamlığımızdır!",
-      rus: "Еге Госпиталь, Ваше здоровье — наша забота!",
-    },
+    picture: "https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://yellowpages.az/wp-content/uploads/2020/06/Logo-1.png",
     prescription: [
       { medicine: { en: "Paracetamol", az: "Paratsetamol", rus: "Парацетамол" }, usage: { en: "Twice a day after meals", az: "Hər gün yeməkdən sonra iki dəfə", rus: "Дважды в день после еды" } },
       { medicine: { en: "Ibuprofen", az: "İbuprofen", rus: "Ибупрофен" }, usage: { en: "Once a day", az: "Hər gün bir dəfə", rus: "Один раз в день" } },
@@ -511,6 +508,7 @@ export const hospitalData = [
   {
     id: 2,
     name: "Referance Hospital",
+    clinicLogo:"R",
     adress: "Matbuat Street 35A",
     dateTime: "3 february, 13:00",
     doctorName: {
@@ -523,11 +521,7 @@ export const hospitalData = [
       az: "Oftalmoloq",
       rus: "Офтальмолог",
     },
-    about: {
-      en: "Referans Hospital - Yeni Dövr, Yeni Yanaşma",
-      az: "Referans Xəstəxanası - Yeni Dövr, Yeni Yanaşma",
-      rus: "Референс Госпиталь - Новый век, новый подход",
-    },
+    picture: "https://referansclc.az/upload/CAllcorp3Medc/e80/rigiwv18teqc4eqvtnjbvfqw1126q1cv.png",
     prescription: [
       { medicine: { en: "Xanax", az: "Zanaks", rus: "Ксанакс" }, usage: { en: "Once a day at bedtime", az: "Hər gün yatmazdan əvvəl bir dəfə", rus: "Один раз в день перед сном" } },
       { medicine: { en: "Amoxicillin", az: "Amoksisillin", rus: "Амоксициллин" }, usage: { en: "Twice a day", az: "Gündə iki dəfə", rus: "Дважды в день" } },
@@ -536,6 +530,7 @@ export const hospitalData = [
   },
   {
     id: 3,
+    clinicLogo:"BM",
     name: "Baku Medical Plaza",
     adress: "Babak avenue 42N",
     dateTime: "15 february, 14:00",
@@ -549,11 +544,7 @@ export const hospitalData = [
       az: "Dərmatoloq",
       rus: "Дерматолог",
     },
-    about: {
-      en: "Baku Medical Plaza - Sağlamlığa doğan günəş!",
-      az: "Bakı Tibb Plaza - Sağlamlığa doğan günəş!",
-      rus: "Баку Мед Плаза - Солнце, восходящее на здоровье!",
-    },
+    picture: "https://www.bmp.az/assets/bmplogo-CCNYgYXy.svg",
     prescription: [
       { medicine: { en: "Ciprofloxacin", az: "Ciprofloksasin", rus: "Ципрофлоксацин" }, usage: { en: "Every 12 hours", az: "Hər 12 saatda", rus: "Каждые 12 часов" } },
       { medicine: { en: "Aspirin", az: "Aspirin", rus: "Аспирин" }, usage: { en: "Once a day", az: "Hər gün bir dəfə", rus: "Один раз в день" } },
