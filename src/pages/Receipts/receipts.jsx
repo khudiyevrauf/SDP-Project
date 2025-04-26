@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../../Context/themeContext";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
@@ -12,6 +12,15 @@ const Receipts = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedReceipt, setSelectedReceipt] = useState(null);
+
+  useEffect(() => {
+    document.title =
+      language === "en"
+        ? "Receipts"
+        : language === "az"
+        ? "Reseptlər"
+        : "Pецепты";
+  }, [language]);
 
   const openModal = (receipt) => {
     setSelectedReceipt(receipt);

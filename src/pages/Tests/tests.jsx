@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../../Context/themeContext";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
@@ -8,11 +8,18 @@ import { translations, testData } from "../../data";
 
 const Tests = () => {
   const { darkMode } = useContext(ThemeContext);
-  const { language } = useLanguage(); 
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    document.title =
+      language === "en" ? "Tests" : language === "az" ? "Testlər" : "Тесты";
+  }, [language]);
 
   const renderTable = (data) => (
     <>
-      <h2 className={styles.sectionTitle}>{translations[language].testTitle}</h2>
+      <h2 className={styles.sectionTitle}>
+        {translations[language].testTitle}
+      </h2>
       <div className={styles.tableWrapper}>
         <table className={styles.table}>
           <thead>
@@ -34,11 +41,13 @@ const Tests = () => {
                 </td>
                 <td data-label={translations[language].result}>
                   {item.result[language] || item.result.en}
-                </td> 
-                <td data-label={translations[language].clinic}>{item.clinic[language] || item.clinic.en}</td>
+                </td>
+                <td data-label={translations[language].clinic}>
+                  {item.clinic[language] || item.clinic.en}
+                </td>
                 <td data-label={translations[language].doctor}>
                   {item.doctor[language] || item.doctor.en}
-                </td> 
+                </td>
                 <td data-label={translations[language].details}>
                   <button className={styles.detailsButton}>
                     {translations[language].details}
@@ -53,7 +62,9 @@ const Tests = () => {
   );
 
   return (
-    <div className={`${styles.testPage} ${darkMode ? styles.darkTestPage : ""}`}>
+    <div
+      className={`${styles.testPage} ${darkMode ? styles.darkTestPage : ""}`}
+    >
       <Sidebar />
       <Header />
       <div className={styles.container}>

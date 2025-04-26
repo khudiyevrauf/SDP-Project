@@ -1,19 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "../Login/login.module.css";
 import sima from "../../assets/sima.png";
 import bsxm from "../../assets/bsxm.png";
 import asan from "../../assets/asan.png";
 import token from "../../assets/token.png";
+import { ThemeContext } from "../../Context/themeContext";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useLanguage } from "../../Context/languageContext";
 import LanguageButton from "../../components/language button/languageButton";
+import { translations } from "../../data";
 
 const Login = () => {
-  const { language } = useLanguage(); 
+  const { darkMode } = useContext(ThemeContext);
+  const { language } = useLanguage();
   const [id, setId] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    document.title =
+      language === "en" ? "Login" : language === "az" ? "Daxil Ol" : "Войти";
+  }, [language]);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -25,56 +33,10 @@ const Login = () => {
     }
   };
 
-  const translations = {
-    en: {
-      home: "Home",
-      loginTitle: "Log In",
-      idLabel: "Identification number",
-      passwordLabel: "Password",
-      rememberMe: "Remember Me",
-      forgotPassword: "Forgot Password",
-      signIn: "Sign In",
-      digitalLogin: "Sign in with Digital Login",
-      signUp: "Don’t have an account? Sign up",
-      sima: "SİMA Digital Signature",
-      asan: "Asan Signature",
-      token: "SİMA Token (Electronic Signature)",
-      bsxm: "BSXM Electronic Signature",
-    },
-    az: {
-      home: "Əsas Səhifə",
-      loginTitle: "Daxil ol",
-      idLabel: "Şəxsiyyət vəsiqəsi nömrəsi",
-      passwordLabel: "Şifrə",
-      rememberMe: "Məni yadda saxla",
-      forgotPassword: "Şifrəni unutdunuz?",
-      signIn: "Daxil ol",
-      digitalLogin: "Rəqəmsal İmza ilə daxil ol",
-      signUp: "Hesabınız yoxdursa? Qeydiyyatdan keçin",
-      sima: "SİMA Rəqəmsal İmza",
-      asan: "Asan İmza",
-      token: "SİMA Token (Elektron İmza)",
-      bsxm: "BSXM Elektron İmza",
-    },
-    rus: {
-      home: "Домой",
-      loginTitle: "Войти",
-      idLabel: "Идентификационный номер",
-      passwordLabel: "Пароль",
-      rememberMe: "Запомнить меня",
-      forgotPassword: "Забыли пароль",
-      signIn: "Войти",
-      digitalLogin: "Войти с помощью цифровой подписи",
-      signUp: "Нет аккаунта? Зарегистрироваться",
-      sima: "Цифровая подпись СИМА",
-      asan: "Подпись Asan",
-      token: "Токен СИМА (Электронная подпись)",
-      bsxm: "Электронная подпись BSXM",
-    },
-  };
-
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${darkMode ? styles.darkContainer : ""}`}
+    >
       <div className={styles.loginSection}>
         <div className={styles.homeAndLang}>
           <NavLink to="/" className={styles.homeBtn}>

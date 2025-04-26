@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { ThemeContext } from "../../Context/themeContext";
 import { useLanguage } from "../../Context/languageContext";
 import Header from "../../components/header/header";
@@ -8,14 +8,23 @@ import dayjs from "dayjs";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
-import { userProfileData } from "../../data"; 
+import { userProfileData } from "../../data";
 
 const UserProfile = () => {
   const { darkMode } = useContext(ThemeContext);
   const { language } = useLanguage();
   const rectFill = darkMode ? "#3a3a3a" : "#1D1B20";
 
-  const user = userProfileData[language]; 
+  const user = userProfileData[language];
+
+  useEffect(() => {
+    document.title =
+      language === "en"
+        ? "User Profile"
+        : language === "az"
+        ? "İstifa dəçi Profili"
+        : "Профиль пользователя";
+  }, [language]);
 
   const HospitalCard = ({ hospitalName, doctorName, dateTime }) => (
     <div className={styles.singleHospital}>

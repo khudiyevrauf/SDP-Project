@@ -45,6 +45,14 @@
   font-size: 10px;
 }
 
+.logo span{
+  color: black;
+}
+
+.darkHeader .logo span{
+  color: white;
+} 
+
 nav {
   display: flex;
   align-items: center;

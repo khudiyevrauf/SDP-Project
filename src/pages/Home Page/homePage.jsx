@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import Header from "../../components/header/header";
 import styles from "../Home Page/homePage.module.css";
@@ -8,6 +8,10 @@ import { useLanguage } from "../../Context/languageContext";
 const HomePage = () => {
   const { darkMode } = useContext(ThemeContext);
   const { language, translations } = useLanguage(); 
+
+  useEffect(() => {
+    document.title ="E-Saglamliq";
+  }, [HomePage]);
 
   return (
     <div className={`${styles.homePage} ${darkMode ? styles.darkHomePage : ""}`}>

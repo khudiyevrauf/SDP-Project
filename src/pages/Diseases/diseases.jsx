@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import Header from "../../components/header/header";
 import Sidebar from "../../components/sidebar/sidebar";
 import styles from "../Diseases/diseases.module.css";
@@ -11,6 +11,15 @@ const Diseases = () => {
   const { language } = useLanguage();
 
   const chronicDiseases = diseasesData;
+
+    useEffect(() => {
+      document.title =
+        language === "en"
+          ? "Diseases "
+          : language === "az"
+          ? "Xəstəliklər"
+          : "Болезни";
+    }, [language]);
 
   const renderTable = (title, data) => (
     <>

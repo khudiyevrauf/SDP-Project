@@ -71,3 +71,13 @@
 .footerText a:hover {
   text-decoration: underline;
 }
+
+.darkRegisterPage{
+  background-color: #3a4f66;
+  color: white;
+}
+
+.darkRegisterPage a{
+  color: white;
+}
+
