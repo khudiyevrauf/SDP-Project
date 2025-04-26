@@ -156,7 +156,7 @@ nav {
   }
 
   .logo {
-    flex-direction: row;
+    flex-direction: column;
     gap: 4px;
     margin-left: 0;
     max-width: 40%;
@@ -180,9 +180,5 @@ nav {
 
   .profileButton {
     flex-shrink: 0;
-  }
-
-  .logoWriting {
-    display: none;
   }
 }

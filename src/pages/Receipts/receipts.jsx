@@ -69,7 +69,7 @@ const Receipts = () => {
               {receiptsData.map((item, index) => (
                 <tr key={index}>
                   <td data-label={date}>{item.date}</td>
-                  <td data-label={clinic}>{item.clinic}</td>
+                  <td data-label={clinic}>{item.clinic[language]}</td>
                   <td data-label={doctor}>{item.doctor[language]}</td>
                   <td data-label={action}>
                     <button

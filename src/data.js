@@ -196,7 +196,7 @@ export const translations = {
 
 // Diseases
 export const diseasesData = {
-  "2025-03-17": {
+  "17-03-2025": {
     en: {
       diagnosis: "Type 2 Diabetes",
       clinic: "Shafa Clinic",
@@ -213,7 +213,7 @@ export const diseasesData = {
       doctor: "Нигар Хасановa",
     },
   },
-  "2025-03-08": {
+  "08-03-2025": {
     en: {
       diagnosis: "Hypertension",
       clinic: "Medical Center 2020",
@@ -230,7 +230,7 @@ export const diseasesData = {
       doctor: "Эльчин Мамедов",
     },
   },
-  "2025-02-20": {
+  "20-02-2025": {
     en: {
       diagnosis: "Asthma",
       clinic: "Ganja Health House",
@@ -247,7 +247,7 @@ export const diseasesData = {
       doctor: "Рафаэль Алиев",
     },
   },
-  "2025-02-05": {
+  "05-02-2025": {
     en: {
       diagnosis: "Rheumatoid Arthritis",
       clinic: "Baku Medical Center",
@@ -264,7 +264,7 @@ export const diseasesData = {
       doctor: "Лейман Гулиева",
     },
   },
-  "2025-01-28": {
+  "28-01-2025": {
     en: {
       diagnosis: "Chronic Kidney Disease",
       clinic: "Healthy Breath Clinic",
@@ -287,8 +287,8 @@ export const diseasesData = {
 
 export const receiptsData = [
   {
-    date: "2025-04-23",
-    clinic: "Ege Hospital",
+    date: "23-04-2025",
+    clinic: {en: "Ege Hospital", az: "Ege Hospital", rus: "Еге Госпиталь" },
     doctor: { en: "Huseyn Aliyev", az: "Hüseyn Əliyev", rus: "Хусейн Алиев" },
     prescription: [
       {
@@ -314,8 +314,8 @@ export const receiptsData = [
     ],
   },
   {
-    date: "2025-04-22",
-    clinic: "Referance Hospital",
+    date: "22-04-2025",
+    clinic: {en: "Referance Hospital", az: "Referance Hospital", rus: "Референс Госпиталь" },
     doctor: { en: "Arif Orucov", az: "Arif Orucov", rus: "Ариф Орджов" },
     prescription: [
       {
@@ -341,8 +341,8 @@ export const receiptsData = [
     ],
   },
   {
-    date: "2025-04-21",
-    clinic: "Baku Medical Plaza",
+    date: "21-04-2025",
+    clinic: {en: "Baku Medical Plaza", az: "Baku Medical Plaza", rus: "Баку Мед Плаза" },
     doctor: {
       en: "Telman Yusifov",
       az: "Telman Yusifov",
@@ -372,8 +372,8 @@ export const receiptsData = [
     ],
   },
   {
-    date: "2025-04-20",
-    clinic: "West Hospital",
+    date: "20-04-2025",
+    clinic: {en: "West Hospital", az: "West Hospital", rus: "Западная больница" },
     doctor: {
       en: "Kazim Qasimov",
       az: "Kazım Qasımov",
@@ -403,8 +403,8 @@ export const receiptsData = [
     ],
   },
   {
-    date: "2025-04-19",
-    clinic: "MedEra Hospital",
+    date: "19-04-2025",
+    clinic: {en: "MedEra Hospital", az: "MedEra Hospital", rus: "МедЭра Госпиталь" },
     doctor: {
       en: "Aysel Aliyeva",
       az: "Aysel Əliyeva",
@@ -443,35 +443,35 @@ export const receiptsData = [
 //Tests
 export const testData = [
   {
-    date: "2025-04-23",
+    date: "23-04-2025",
     testName: { en: "Blood Test", az: "Qan testi", rus: "Анализ крови" },
     result: { en: "Positive", az: "Müsbət", rus: "Положительный" },
     clinic: { en: "Baku Medical Plaza", az: "Bakı Tibb Mərkəzi", rus: "Баку Медицинский Плаза" },
     doctor: { en: "Rasim Qulamov", az: "Rasim Qulamov", rus: "Расим Гуланов" },
   },
   {
-    date: "2025-04-22",
+    date: "22-04-2025",
     testName: { en: "X-ray", az: "Rentgen", rus: "Рентген" },
     result: { en: "Negative", az: "Mənfi", rus: "Отрицательный" },
     clinic: { en: "Referance Hospital", az: "Referans Xəstəxanası", rus: "Референтная больница" },
     doctor: { en: "Türkan İsmayılova", az: "Türkan İsmayılova", rus: "Тюркан Исмайлова" },
   },
   {
-    date: "2025-04-21",
+    date: "21-04-2025",
     testName: { en: "CT Scan", az: "CT Skani", rus: "КТ сканирование" },
     result: { en: "Positive", az: "Müsbət", rus: "Положительный" },
     clinic: { en: "Ege Hospital", az: "Ege Xəstəxanası", rus: "Еге Госпиталь" },
     doctor: { en: "Telman Yusifov", az: "Telman Yusifov", rus: "Телман Юсифов" },
   },
   {
-    date: "2025-04-20",
+    date: "20-04-2025",
     testName: { en: "MRI", az: "MRT", rus: "МРТ" },
     result: { en: "Negative", az: "Mənfi", rus: "Отрицательный" },
     clinic: { en: "Baku Medical Plaza", az: "Bakı Tibb Mərkəzi", rus: "Баку Медицинский Плаза" },
     doctor: { en: "Arif Orucov", az: "Arif Orucov", rus: "Ариф Орджов" },
   },
   {
-    date: "2025-04-19",
+    date: "19-04-2025",
     testName: { en: "Ultrasound", az: "Ultrasəs", rus: "УЗИ" },
     result: { en: "Positive", az: "Müsbət", rus: "Положительный" },
     clinic: { en: "Baku Medical Plaza", az: "Bakı Tibb Mərkəzi", rus: "Баку Медицинский Плаза" },
