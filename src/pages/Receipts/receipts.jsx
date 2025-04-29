@@ -16,7 +16,7 @@ const Receipts = () => {
   useEffect(() => {
     document.title =
       language === "en"
-        ? "Receipts"
+        ? "Recipes"
         : language === "az"
         ? "Reseptlər"
         : "Pецепты";

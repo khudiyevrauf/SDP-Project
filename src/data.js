@@ -564,12 +564,12 @@ export const userProfileData = {
     heightLabel: "Height:",
     age: "22",
     gender: "Male",
-    weight: "76kg",
-    height: "182cm",
+    weight: "76 kg",
+    height: "182 cm",
     upcomingVisits: [
-      { hospital: "Ege Hospital", doctor: "Huseyn Aliyev, Dentistry", dateTime: "19 January, 08:00" },
-      { hospital: "Referance Hospital", doctor: "Arif Orucov, Ophthalmology", dateTime: "3 February, 13:00" },
-      { hospital: "Baku Medical Plaza", doctor: "Telman Yusifov, Dermatology", dateTime: "15 February, 14:00" },
+      { hospitalLetter: "E", hospital: "Ege Hospital", doctor: "Huseyn Aliyev, Dentistry", dateTime: "19 January, 08:00" },
+      { hospitalLetter: "R", hospital: "Referance Hospital", doctor: "Arif Orucov, Ophthalmology", dateTime: "3 February, 13:00" },
+      { hospitalLetter: "BM", hospital: "Baku Medical Plaza", doctor: "Telman Yusifov, Dermatology", dateTime: "15 February, 14:00" },
     ],
   },
   az: {
@@ -580,12 +580,12 @@ export const userProfileData = {
     heightLabel: "Boy:",
     age: "22",
     gender: "Kişi",
-    weight: "76kg",
-    height: "182sm",
+    weight: "76 kg",
+    height: "182 sm",
     upcomingVisits: [
-      { hospital: "Ege Xəstəxanası", doctor: "Hüseyn Əliyev, Diş Həkimi", dateTime: "19 yanvar, 08:00" },
-      { hospital: "Referans Xəstəxanası", doctor: "Arif Orucov, Oftalmoloq", dateTime: "3 fevral, 13:00" },
-      { hospital: "Bakı Tibb Plaza", doctor: "Telman Yusifov, Dermatoloq", dateTime: "15 fevral, 14:00" },
+      { hospitalLetter: "E", hospital: "Ege Xəstəxanası", doctor: "Hüseyn Əliyev, Diş Həkimi", dateTime: "19 yanvar, 08:00" },
+      { hospitalLetter: "R", hospital: "Referans Xəstəxanası", doctor: "Arif Orucov, Oftalmoloq", dateTime: "3 fevral, 13:00" },
+      { hospitalLetter: "BM", hospital: "Bakı Tibb Plaza", doctor: "Telman Yusifov, Dermatoloq", dateTime: "15 fevral, 14:00" },
     ],
   },
   rus: {
@@ -596,15 +596,13 @@ export const userProfileData = {
     heightLabel: "Рост:",
     age: "22",
     gender: "Мужчина",
-    weight: "76кг",
-    height: "182см",
+    weight: "76 кг",
+    height: "182 см",
     upcomingVisits: [
-      { hospital: "Еге Госпиталь", doctor: "Хусейн Алиев, Стоматолог", dateTime: "19 января, 08:00" },
-      { hospital: "Референс Госпиталь", doctor: "Ариф Орджов, Офтальмолог", dateTime: "3 февраля, 13:00" },
-      { hospital: "Баку Мед Плаза", doctor: "Телман Юсифов, Дерматолог", dateTime: "15 февраля, 14:00" },
+      { hospitalLetter: "E", hospital: "Еге Госпиталь", doctor: "Хусейн Алиев, Стоматолог", dateTime: "19 января, 08:00" },
+      { hospitalLetter: "R", hospital: "Референс Госпиталь", doctor: "Ариф Орджов, Офтальмолог", dateTime: "3 февраля, 13:00" },
+      { hospitalLetter: "BM", hospital: "Баку Мед Плаза", doctor: "Телман Юсифов, Дерматолог", dateTime: "15 февраля, 14:00" },
     ],
   },
 };
-
-// Login and Register
 

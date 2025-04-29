@@ -13,7 +13,7 @@
   display: flex;
   margin-bottom: 30px;
   align-items: center;
-  width: 82.5vw;
+  width: 83vw;
 }
 
 .filterBarDate {
@@ -75,7 +75,9 @@
 
 .cardContainer {
   display: flex;
-  gap: 20px;
+  width: 83vw;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .card {

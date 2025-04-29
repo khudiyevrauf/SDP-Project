@@ -26,42 +26,9 @@ const UserProfile = () => {
         : "Профиль пользователя";
   }, [language]);
 
-  const HospitalCard = ({ hospitalName, doctorName, dateTime }) => (
+  const HospitalCard = ({ hospitalLetter, hospitalName, doctorName, dateTime }) => (
     <div className={styles.singleHospital}>
-      <svg
-        className={styles.hospitalLogo}
-        width="40"
-        height="41"
-        viewBox="0 0 40 41"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g clipPath="url(#clip0_1112_14798)">
-          <rect
-            width="40"
-            height="40"
-            transform="translate(0 0.601685)"
-            fill={rectFill}
-            fillOpacity="0.12"
-          />
-          <path
-            d="M18.0801 19.549V20.3156H14.2324V19.549H18.0801ZM14.3789 16.4923V23.6017H13.4365V16.4923H14.3789ZM18.9004 16.4923V23.6017H17.9629V16.4923H18.9004ZM26.5439 16.4923V23.6017H25.5967L22.0176 18.1183V23.6017H21.0752V16.4923H22.0176L25.6113 21.9904V16.4923H26.5439Z"
-            fill="#1D1B20"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_1112_14798">
-            <rect
-              y="0.601685"
-              width="40"
-              height="40"
-              rx="20"
-              fill={rectFill}
-              fillOpacity="0.12"
-            />
-          </clipPath>
-        </defs>
-      </svg>
+      <span className={styles.initial}>{hospitalLetter}</span>
       <div className={styles.hospitalNameInfo}>
         <p className={styles.hospitalName}>{hospitalName}</p>
         <p className={styles.hospitalDetail}>{doctorName}</p>
@@ -101,7 +68,7 @@ const UserProfile = () => {
                 <span>Comments from doctors</span>
                 <input
                   type="text"
-                  placeholder="Doctor Comments"
+                  placeholder="Doctor comments"
                   className={styles.commentSection}
                 />
               </div>
@@ -119,6 +86,7 @@ const UserProfile = () => {
                 {user.upcomingVisits.map((visit, index) => (
                   <HospitalCard
                     key={index}
+                    hospitalLetter={visit.hospitalLetter}
                     hospitalName={visit.hospital}
                     doctorName={visit.doctor}
                     dateTime={visit.dateTime}

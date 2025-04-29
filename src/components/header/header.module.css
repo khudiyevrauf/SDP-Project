@@ -156,7 +156,7 @@ nav {
   }
 
   .logo {
-    flex-direction: column;
+    flex-direction: row;
     gap: 4px;
     margin-left: 0;
     max-width: 40%;

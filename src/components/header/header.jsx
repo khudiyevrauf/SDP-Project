@@ -34,7 +34,7 @@ const Header = () => {
             />
           </svg>
         </NavLink>
-        <span className={styles.logoWriting}>E-Saglamliq</span>
+        <span className={styles.logoWriting}>e-saglamliq</span>
       </div>
       <nav>
         <NavLink to="/">

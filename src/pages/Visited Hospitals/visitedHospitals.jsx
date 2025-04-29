@@ -174,11 +174,11 @@ const VisitedHospitals = () => {
                   </div>
 
                   <div className={styles.cardBody}>
-                    <img
+                    {/* <img
                       src={card.picture}
                       alt="pic"
                       className={styles.cardImg}
-                    />
+                    /> */}
                     <div className={styles.datetime}>{card.dateTime}</div>
                     <div className={styles.PrNm}>
                       <div className={styles.profession}>

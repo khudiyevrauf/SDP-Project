@@ -74,6 +74,20 @@
   margin-bottom: 36px;
 }
 
+.initial {
+  background-color: #E3E3E4;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 18px;
+  color: black;
+}
+
 .hospitals {
   display: flex;
   flex-flow: column;
@@ -134,7 +148,7 @@ span {
     flex-wrap: nowrap;
   }
 
-  .userInfo{
+  .userInfo {
     margin-bottom: 22px;
   }
 
@@ -151,7 +165,7 @@ span {
     text-align: left;
   }
 
-  .comments{
+  .comments {
     margin-bottom: 22px;
     gap: 6px;
   }
@@ -161,8 +175,14 @@ span {
     max-width: 100%;
   }
 
-  .upcomingVisits > p{
+  .upcomingVisits > p {
     margin-bottom: 16px;
+  }
+
+  .initial {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
   }
 
   .calendar {
